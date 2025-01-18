@@ -24,7 +24,7 @@ export default function NoteState(props) {
 
         });
         const json = await response.json()
-        console.log(json)
+
         setNotes(json)
     }
 
@@ -75,7 +75,7 @@ export default function NoteState(props) {
 
         });
         const json = await response.json()
-        console.log(json)
+
 
         console.log("delete" + id);
         const newNotes = notes.filter((note) => { return note._id !== id })
@@ -121,7 +121,6 @@ export default function NoteState(props) {
         deleteNote,
         editNote,
         getNote,
-        updateNote
     }
 
     return (

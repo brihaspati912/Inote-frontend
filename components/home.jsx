@@ -20,11 +20,10 @@ export default function Home() {
             </label>
 
 
-            <div className="flex grid grid-cols-1 sm:grid-cols-1 justify-center sm:justify-center md:grid-cols-4 lg:grid-cols-6 gap-8">
 
-                <Note />
 
-            </div>
+            <Note />
+
 
 
 

@@ -1,7 +1,9 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import Card from "./card.jsx"
 import noteContext from './notes/context/noteContext.jsx';
-import Modal from './Modal.jsx';
+
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 export default function Note() {
     const context = useContext(noteContext)
@@ -11,17 +13,27 @@ export default function Note() {
         getNote()
     }, [])
 
-    const updateNote = () => {
-
+    const updateNote = (note) => {
+        ref.current.click()
     }
+    const ref = useRef("")
+
 
     return (
         <>
-            <Modal />
+
+
+
+
+
+
+
             {notes.map((note) => {
                 return (
-                    <div key={note._id} update={() => { updateNote(note) }}>
-                        <Card title={note.title} des={note.des} tag={note.tag} id={note._id} />
+                    <div key={note._id} className='' >
+                        <Card title={note.title} des={note.des} tag={note.tag} id={note._id}
+                            update={() => { updateNote(note) }}
+                        />
 
                     </div>
                 )
